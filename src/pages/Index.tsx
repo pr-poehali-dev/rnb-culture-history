@@ -1,9 +1,13 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,20 +25,70 @@ const Index = () => {
       if (section) observer.observe(section);
     });
 
-    return () => observer.disconnect();
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 3000);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
   }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <article className="max-w-3xl mx-auto px-6 py-16 md:py-24">
-        <header className="mb-16 opacity-0 animate-fade-in">
-          <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
-            Исторический контекст культуры R&B
+      <div className="relative w-full h-screen overflow-hidden">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted={isMuted}
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        >
+          <source src="https://cdn.pixabay.com/video/2024/02/20/201127-916008066_large.mp4" type="video/mp4" />
+        </video>
+        
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+        
+        <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
+          <h1 className="font-display text-6xl md:text-8xl font-bold mb-6 tracking-tight leading-tight animate-fade-in text-white drop-shadow-2xl">
+            Исторический контекст<br />культуры R&B
           </h1>
-          <p className="font-sans text-lg text-muted-foreground">
+          <p className="font-sans text-xl md:text-2xl text-white/90 mb-12 animate-fade-in drop-shadow-lg">
             От блюзовых корней 1940-х до цифровой эры The Weeknd
           </p>
-        </header>
+          
+          <button
+            onClick={toggleMute}
+            className="absolute top-8 right-8 p-4 bg-black/40 hover:bg-black/60 backdrop-blur-sm rounded-full transition-all"
+            aria-label={isMuted ? 'Включить звук' : 'Выключить звук'}
+          >
+            <Icon name={isMuted ? 'VolumeX' : 'Volume2'} size={24} className="text-white" />
+          </button>
+
+          {showContent && (
+            <button
+              onClick={() => {
+                window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+              }}
+              className="absolute bottom-12 animate-bounce"
+              aria-label="Прокрутить вниз"
+            >
+              <Icon name="ChevronDown" size={48} className="text-white drop-shadow-lg" />
+            </button>
+          )}
+        </div>
+      </div>
+
+      <article className="max-w-3xl mx-auto px-6 py-16 md:py-24">
 
         <section
           ref={(el) => (sectionsRef.current[0] = el)}
