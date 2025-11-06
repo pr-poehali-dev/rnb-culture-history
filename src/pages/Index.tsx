@@ -57,19 +57,19 @@ const Index = () => {
           <source src="https://cdn.pixabay.com/video/2024/02/20/201127-916008066_large.mp4" type="video/mp4" />
         </video>
         
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-background" />
         
         <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
-          <h1 className="font-display text-6xl md:text-8xl font-bold mb-6 tracking-tight leading-tight animate-fade-in text-white drop-shadow-2xl">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-tight animate-fade-in text-white drop-shadow-2xl">
             Исторический контекст<br />культуры R&B
           </h1>
-          <p className="font-sans text-xl md:text-2xl text-white/90 mb-12 animate-fade-in drop-shadow-lg">
+          <p className="font-sans text-lg sm:text-xl md:text-2xl text-white mb-12 animate-fade-in drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] max-w-3xl">
             От блюзовых корней 1940-х до цифровой эры The Weeknd
           </p>
           
           <button
             onClick={toggleMute}
-            className="absolute top-8 right-8 p-4 bg-black/40 hover:bg-black/60 backdrop-blur-sm rounded-full transition-all"
+            className="absolute top-4 right-4 md:top-8 md:right-8 p-3 md:p-4 bg-black/60 hover:bg-black/80 backdrop-blur-sm rounded-full transition-all"
             aria-label={isMuted ? 'Включить звук' : 'Выключить звук'}
           >
             <Icon name={isMuted ? 'VolumeX' : 'Volume2'} size={24} className="text-white" />
@@ -89,11 +89,11 @@ const Index = () => {
         </div>
       </div>
 
-      <article className="max-w-3xl mx-auto px-6 py-16 md:py-24">
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16 lg:py-24">
 
         <section
           ref={(el) => (sectionsRef.current[0] = el)}
-          className="mb-20 opacity-0"
+          className="mb-12 md:mb-20 opacity-0 transition-opacity duration-700"
         >
           <div className="prose prose-invert max-w-none">
             <p className="text-lg leading-relaxed mb-6">
@@ -120,7 +120,7 @@ const Index = () => {
 
         <section
           ref={(el) => (sectionsRef.current[1] = el)}
-          className="mb-20 opacity-0"
+          className="mb-12 md:mb-20 opacity-0 transition-opacity duration-700"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 text-primary">
             Истоки: урбанизация блюза
@@ -151,7 +151,7 @@ const Index = () => {
 
         <section
           ref={(el) => (sectionsRef.current[2] = el)}
-          className="mb-20 opacity-0"
+          className="mb-12 md:mb-20 opacity-0 transition-opacity duration-700"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 text-primary">
             Классический R&B: предвестник рок-н-ролла
@@ -191,7 +191,7 @@ const Index = () => {
 
         <section
           ref={(el) => (sectionsRef.current[3] = el)}
-          className="mb-20 opacity-0"
+          className="mb-12 md:mb-20 opacity-0 transition-opacity duration-700"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 text-primary">
             Британский ритм-н-блюз
@@ -218,7 +218,7 @@ const Index = () => {
 
         <section
           ref={(el) => (sectionsRef.current[4] = el)}
-          className="mb-20 opacity-0"
+          className="mb-12 md:mb-20 opacity-0 transition-opacity duration-700"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 text-primary">
             1960-е: от R&B к соулу
@@ -246,7 +246,7 @@ const Index = () => {
 
         <section
           ref={(el) => (sectionsRef.current[5] = el)}
-          className="mb-20 opacity-0"
+          className="mb-12 md:mb-20 opacity-0 transition-opacity duration-700"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 text-primary">
             1980-е и далее: электронная революция
@@ -273,7 +273,7 @@ const Index = () => {
 
         <section
           ref={(el) => (sectionsRef.current[6] = el)}
-          className="mb-20 opacity-0"
+          className="mb-12 md:mb-20 opacity-0 transition-opacity duration-700"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-primary">
             Яркие представители современного R&B
