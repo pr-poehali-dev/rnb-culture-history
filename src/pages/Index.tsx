@@ -113,6 +113,18 @@ const Index = () => {
             <p className="text-lg leading-relaxed mb-6">
               Поэтому говорить о ритм-н-блюзе как о едином жанре не имеет смысла. Вместо этого, давайте проследим, как менялось его значение с момента появления.
             </p>
+
+            <div className="my-8 rounded-lg overflow-hidden">
+              <div className="relative pb-[56.25%]">
+                <iframe 
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Эволюция R&B музыки"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -134,6 +146,14 @@ const Index = () => {
             <p className="text-lg leading-relaxed mb-6">
               К середине XX века афроамериканцы стали чаще переезжать в города в поисках работы, где требовались другие формы развлечений. Городская публика, привыкшая к джазу и свингу, любила танцевать, а для этого меланхоличный, минималистичный блюз подходил не очень хорошо.
             </p>
+
+            <div className="my-8 rounded-lg overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/projects/9a8128c0-8e7d-43b8-8452-8fb3ecc59c3a/files/51468454-c0b4-47c0-a9b2-eeffeb30c510.jpg" 
+                alt="Джамп-блюз эпохи 1940-х" 
+                className="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
 
             <Card className="bg-muted border-primary/20 p-6 my-8">
               <h3 className="font-display text-2xl font-bold mb-4">Джамп-блюз</h3>
@@ -166,6 +186,14 @@ const Index = () => {
               Типичный состав группы включал солиста (или ведущий инструмент) в сопровождении ритм-секции, духовых инструментов и бэк-вокалисток. Инструментарий был почти идентичен джаз-бэндам эпохи свинга: бас, барабаны, фортепиано, гитара, саксофон и труба.
             </p>
 
+            <div className="my-8 rounded-lg overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/projects/9a8128c0-8e7d-43b8-8452-8fb3ecc59c3a/files/30ee2e20-7b29-4ca9-8156-2b1df8592f78.jpg" 
+                alt="Классический R&B 1950-х" 
+                className="w-full h-64 md:h-96 object-cover"
+              />
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
               <Card className="bg-muted/50 border-primary/10 p-5">
                 <h4 className="font-display text-lg font-bold mb-2">1949</h4>
@@ -197,6 +225,14 @@ const Index = () => {
             Британский ритм-н-блюз
           </h2>
 
+          <div className="my-8 rounded-lg overflow-hidden">
+            <img 
+              src="https://cdn.poehali.dev/projects/9a8128c0-8e7d-43b8-8452-8fb3ecc59c3a/files/449bffa8-0ffd-4f41-b381-b4a51cf3aae4.jpg" 
+              alt="Британский ритм-н-блюз 1960-х" 
+              className="w-full h-64 md:h-96 object-cover"
+            />
+          </div>
+
           <div className="prose prose-invert max-w-none">
             <p className="text-lg leading-relaxed mb-6">
               В конце 1950-х годов американский блюз завоевал невероятную популярность в Великобритании, оказав огромное влияние практически на всех молодых музыкантов. Ситуация изменилась благодаря группе Blues Incorporated, созданной Алексисом Корнером.
@@ -223,6 +259,14 @@ const Index = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 text-primary">
             1960-е: от R&B к соулу
           </h2>
+
+          <div className="my-8 rounded-lg overflow-hidden">
+            <img 
+              src="https://cdn.poehali.dev/projects/9a8128c0-8e7d-43b8-8452-8fb3ecc59c3a/files/5ebdae5a-66cd-4111-8544-d49db056885b.jpg" 
+              alt="Motown и соул 1960-1970-х" 
+              className="w-full h-64 md:h-96 object-cover"
+            />
+          </div>
 
           <div className="prose prose-invert max-w-none">
             <p className="text-lg leading-relaxed mb-6">
@@ -251,6 +295,14 @@ const Index = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 text-primary">
             1980-е и далее: электронная революция
           </h2>
+
+          <div className="my-8 rounded-lg overflow-hidden">
+            <img 
+              src="https://cdn.poehali.dev/projects/9a8128c0-8e7d-43b8-8452-8fb3ecc59c3a/files/3b72111c-d19c-4eaa-b9df-4b27865cd9c8.jpg" 
+              alt="Современный R&B" 
+              className="w-full h-64 md:h-96 object-cover"
+            />
+          </div>
 
           <div className="prose prose-invert max-w-none">
             <p className="text-lg leading-relaxed mb-6">
